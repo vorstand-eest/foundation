@@ -891,13 +891,13 @@ h4 { font-size: 22px; }
 }
 
 .footer-about {
-    max-width: 280px;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
 .footer-about p {
+    max-width: 280px;
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 16px;
@@ -907,7 +907,6 @@ h4 { font-size: 22px; }
 .footer-legal {
     font-size: 13px;
     line-height: 2.4;
-    min-width: max-content;
 }
 
 .footer-legal a {
@@ -979,8 +978,16 @@ h4 { font-size: 22px; }
 }
 
 .footer-bottom-row {
-    grid-template-columns: auto 1fr auto !important;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr !important;
     align-items: start;
+}
+
+.footer-bottom-row .footer-bank {
+    grid-column: 2 / 4;
+}
+
+.footer-bottom-row .footer-legal {
+    min-width: 0;
 }
 
 .footer-bottom-row h4 {
