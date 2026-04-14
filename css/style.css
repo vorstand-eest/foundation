@@ -865,7 +865,7 @@ h4 { font-size: 22px; }
 
 .footer-legal {
     font-size: 13px;
-    line-height: 2.4;
+    line-height: 1.8;
 }
 
 .footer-legal a {
@@ -960,9 +960,9 @@ h4 { font-size: 22px; }
 }
 
 .footer-bottom {
-    font-size: 14px;
+    font-size: 13px;
     color: #888;
-    line-height: 2.4;
+    line-height: 1.8;
 }
 
 .footer-bottom a {
