@@ -751,6 +751,13 @@ h4 { font-size: 22px; }
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 40px;
+    align-items: start;
+}
+
+.footer-grid > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .footer-logo img {
@@ -761,6 +768,9 @@ h4 { font-size: 22px; }
 
 .footer-about {
     max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .footer-about p {
@@ -770,8 +780,9 @@ h4 { font-size: 22px; }
 }
 
 .footer-legal {
-    font-size: 13px;
-    margin-top: 16px;
+    margin-top: auto;
+    font-size: 14px;
+    line-height: 2.4;
 }
 
 .footer-legal a {
@@ -819,13 +830,13 @@ h4 { font-size: 22px; }
 }
 
 .footer-contact .btn {
-    margin-top: 16px;
+    margin-top: auto;
 }
 
 .footer-bottom {
-    font-size: 13px;
+    font-size: 14px;
     color: #888;
-    margin-top: 24px;
+    line-height: 2.4;
 }
 
 .footer-bottom a {
