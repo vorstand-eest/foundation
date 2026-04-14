@@ -754,7 +754,7 @@ h4 { font-size: 22px; }
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 80px;
     margin-bottom: 16px;
 }
 
@@ -816,11 +816,9 @@ h4 { font-size: 22px; }
 }
 
 .footer-bottom {
-    margin-top: 48px;
-    padding: 20px 0;
-    border-top: 1px solid #333;
     font-size: 13px;
     color: #888;
+    margin-top: 8px;
 }
 
 .footer-bottom a {
