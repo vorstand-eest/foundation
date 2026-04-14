@@ -125,6 +125,3 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 
 ## Noch offen
 - [ ] PayPal Business-ID eintragen (spenden.html)
-- [ ] Foto Dr. Charles Löhnitz
-- [ ] SPORT VERNETZT Seite (später)
-- [ ] Responsive Feinschliff (Mobile/Tablet)
