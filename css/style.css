@@ -958,6 +958,8 @@ h4 { font-size: 22px; }
 
 .footer-contact .btn {
     margin-top: auto;
+    position: relative;
+    top: -5px;
 }
 
 .btn-footer-cta {
