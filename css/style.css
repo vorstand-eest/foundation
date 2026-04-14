@@ -905,10 +905,8 @@ h4 { font-size: 22px; }
 }
 
 .footer-legal {
-    margin-top: auto;
     font-size: 13px;
     line-height: 2.4;
-    white-space: nowrap;
 }
 
 .footer-legal a {
