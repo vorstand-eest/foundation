@@ -906,8 +906,9 @@ h4 { font-size: 22px; }
 
 .footer-legal {
     margin-top: auto;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 2.4;
+    white-space: nowrap;
 }
 
 .footer-legal a {
@@ -974,7 +975,7 @@ h4 { font-size: 22px; }
 }
 
 .footer-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     margin: 24px 0 20px;
 }
 
@@ -983,11 +984,12 @@ h4 { font-size: 22px; }
 }
 
 .footer-bottom-row h4 {
-    margin-bottom: 8px;
+    font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .footer-bank p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.8;
 }
 
