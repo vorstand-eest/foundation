@@ -53,59 +53,79 @@
 <!-- DONATION FORM -->
 <section class="content-section bg-white">
     <div class="container">
-        <div class="two-col" style="gap: 60px; align-items: start;">
+        <div class="two-col" style="gap: 60px; align-items: stretch;">
 
-            <!-- LEFT: Spendenhöhe -->
+            <!-- LEFT: Spendenhöhe & Intervall -->
             <div>
-                <h3 style="margin-bottom: 20px;">Spendenhöhe</h3>
+                <h3 style="margin-bottom: 20px;">Spendenhöhe &amp; Intervall</h3>
 
-                <div class="donation-amounts">
-                    <button class="donation-amount" data-amount="25">25 &euro;</button>
-                    <button class="donation-amount" data-amount="50">50 &euro;</button>
-                    <button class="donation-amount selected" data-amount="100">100 &euro;</button>
-                    <button class="donation-amount" data-amount="250">250 &euro;</button>
-                    <button class="donation-amount" data-amount="500">500 &euro;</button>
-                </div>
-
-                <div class="donation-custom" id="custom-amount-box">
-                    <input type="text" class="donation-custom-input" id="custom-amount" placeholder="Individuellen Betrag eingeben" style="border: none; text-align: center; width: 100%; font-size: 18px; font-weight: 600; font-family: var(--font-body); outline: none; color: var(--color-text-dark);">
-                </div>
-
-                <h3 style="margin-bottom: 20px; margin-top: 40px;">Projekt auswählen</h3>
                 <div class="donate-projects">
                     <label class="donate-radio">
-                        <input type="radio" name="project" value="allgemein" checked>
-                        <span>Allgemein spenden</span>
+                        <input type="radio" name="interval" value="einmalig" checked>
+                        <span>Einmalig spenden</span>
                     </label>
                     <label class="donate-radio">
-                        <input type="radio" name="project" value="loewenpark">
-                        <span>Löwenpark</span>
+                        <input type="radio" name="interval" value="monatlich">
+                        <span>Monatlich spenden</span>
                     </label>
                     <label class="donate-radio">
-                        <input type="radio" name="project" value="baumpflanzaktion">
-                        <span>Baumpflanzaktion</span>
+                        <input type="radio" name="interval" value="jaehrlich">
+                        <span>Jährlich spenden</span>
+                    </label>
+                </div>
+
+                <h3 style="margin-bottom: 16px; margin-top: 28px;">Betrag</h3>
+                <div class="donate-projects">
+                    <label class="donate-radio">
+                        <input type="radio" name="amount" value="50">
+                        <span>50 €</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="amount" value="100" checked>
+                        <span>100 €</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="amount" value="250">
+                        <span>250 €</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="amount" value="500">
+                        <span>500 €</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="amount" value="custom" id="custom-radio">
+                        <input type="text" id="custom-amount" placeholder="Individueller Betrag" style="border: none; outline: none; font-size: 15px; font-weight: 500; font-family: var(--font-body); color: var(--color-text-dark); width: 100%;">
                     </label>
                 </div>
             </div>
 
-            <!-- RIGHT: Intervall, Bescheinigung, Button -->
-            <div>
-                <h3 style="margin-bottom: 20px;">Spendenintervall</h3>
-                <select id="donate-interval" style="width: 100%; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 16px; font-family: var(--font-body); color: var(--color-text-dark); background: #fff; cursor: pointer; appearance: auto;">
-                    <option value="einmalig" selected>Einmalig spenden</option>
-                    <option value="monatlich">Monatlich spenden</option>
-                    <option value="jaehrlich">Jährlich spenden</option>
-                </select>
+            <!-- RIGHT: Projekt, Bescheinigung, Button -->
+            <div style="display: flex; flex-direction: column;">
+                <h3 style="margin-bottom: 20px;">Projekt auswählen</h3>
+                <div class="donate-projects">
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="allgemein" checked>
+                        <span>Nicht projektspezifisch</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="loewenpark">
+                        <span>Projekt Löwenpark</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="baumpflanzaktion">
+                        <span>Projekt Baumpflanzaktion</span>
+                    </label>
+                </div>
 
                 <!-- Spendenbescheinigung -->
-                <div style="margin-top: 32px;">
-                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 16px; font-weight: 500; color: var(--color-text-dark);">
-                        <input type="checkbox" id="receipt-check" style="width: 20px; height: 20px; accent-color: var(--color-orange); cursor: pointer;" onchange="document.getElementById('receipt-details').style.display = this.checked ? 'block' : 'none'">
+                <div style="margin-top: 28px;">
+                    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--color-text-dark);">
+                        <input type="checkbox" id="receipt-check" checked style="width: 20px; height: 20px; accent-color: var(--color-orange); cursor: pointer;" onchange="document.getElementById('receipt-details').style.display = this.checked ? 'block' : 'none'">
                         Spendenbescheinigung erhalten
                     </label>
                 </div>
 
-                <div id="receipt-details" style="display: none; margin-top: 20px; padding: 24px; background: var(--color-bg-light); border-radius: 12px;">
+                <div id="receipt-details" style="display: block; margin-top: 20px; padding: 24px; background: var(--color-bg-light); border-radius: 12px;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
                         <div>
                             <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Vorname</label>
@@ -136,7 +156,7 @@
                     </div>
                 </div>
 
-                <a href="#" id="paypal-donate-btn" class="btn btn-primary btn-donate" style="margin-top: 32px;">Jetzt mit PayPal spenden &rarr;</a>
+                <a href="#" id="paypal-donate-btn" class="btn btn-donate" style="margin-top: auto; background: #F38314; color: #fff;">Jetzt mit PayPal spenden &rarr;</a>
 
                 <p style="margin-top: 16px; font-size: 13px; text-align: center; color: #999;">Ihre Spende ist steuerlich absetzbar.</p>
             </div>
@@ -205,18 +225,20 @@
 // PayPal Donation Handler
 document.getElementById('paypal-donate-btn').addEventListener('click', function(e) {
     e.preventDefault();
-    var selected = document.querySelector('.donation-amount.selected');
-    var customInput = document.querySelector('.donation-custom-input');
-    var amount = 100;
 
-    var customVal = customInput ? customInput.value.replace(/[^0-9]/g, '') : '';
-    if (customVal && parseInt(customVal) > 0) {
-        amount = parseInt(customVal);
-    } else if (selected) {
-        amount = parseFloat(selected.dataset.amount);
+    // Get amount
+    var amountRadio = document.querySelector('input[name="amount"]:checked');
+    var amount = 100;
+    if (amountRadio) {
+        if (amountRadio.value === 'custom') {
+            var customVal = document.getElementById('custom-amount').value.replace(/[^0-9]/g, '');
+            amount = customVal ? parseInt(customVal) : 100;
+        } else {
+            amount = parseInt(amountRadio.value);
+        }
     }
 
-    // Get project selection
+    // Get project
     var project = document.querySelector('input[name="project"]:checked').value;
     var itemName = 'Spende an E.E.S.T. Foundation';
     if (project !== 'allgemein') {
@@ -224,12 +246,12 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     }
 
     // Get interval
-    var interval = document.getElementById('donate-interval').value;
+    var interval = document.querySelector('input[name="interval"]:checked').value;
     if (interval !== 'einmalig') {
         itemName += ' (' + interval + ')';
     }
 
-    // Get receipt info if requested
+    // Get receipt info
     var receiptCheck = document.getElementById('receipt-check');
     var custom = '';
     if (receiptCheck && receiptCheck.checked) {
@@ -242,24 +264,18 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
         custom = 'Bescheinigung: ' + fn + ' ' + ln + ', ' + street + ', ' + zip + ' ' + city + ', ' + email;
     }
 
-    // PayPal Donation Link — replace YOUR_PAYPAL_ID with actual PayPal business ID
+    // PayPal Donation Link - replace YOUR_PAYPAL_ID with actual PayPal business ID
     var paypalUrl = 'https://www.paypal.com/donate?business=YOUR_PAYPAL_ID&amount=' + amount + '&currency_code=EUR&item_name=' + encodeURIComponent(itemName);
     if (custom) paypalUrl += '&custom=' + encodeURIComponent(custom);
     window.open(paypalUrl, '_blank');
 });
 
-// Custom amount: highlight box, clear preset selection, format with Euro
+// Custom amount: select radio when typing, format with Euro on blur
 var customInput = document.getElementById('custom-amount');
-var customBox = document.getElementById('custom-amount-box');
-if (customInput && customBox) {
+var customRadio = document.getElementById('custom-radio');
+if (customInput) {
     customInput.addEventListener('focus', function() {
-        // Remove preset selection
-        document.querySelectorAll('.donation-amount').forEach(function(b) {
-            b.classList.remove('selected');
-        });
-        // Highlight custom box
-        customBox.classList.add('selected');
-        // Remove Euro sign for editing
+        if (customRadio) customRadio.checked = true;
         var val = this.value.replace(/[^0-9]/g, '');
         this.value = val;
     });
@@ -269,18 +285,9 @@ if (customInput && customBox) {
             this.value = val + ' \u20AC';
         } else {
             this.value = '';
-            customBox.classList.remove('selected');
         }
     });
 }
-
-// When clicking a preset amount, deselect custom box
-document.querySelectorAll('.donation-amount').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        if (customBox) customBox.classList.remove('selected');
-        if (customInput) customInput.value = '';
-    });
-});
 </script>
 </body>
 </html>

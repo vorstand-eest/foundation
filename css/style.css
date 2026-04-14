@@ -727,6 +727,13 @@ h4 { font-size: 22px; }
 /* ============================================
    DONATION SECTION
    ============================================ */
+.donation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
 .donation-amounts {
     display: flex;
     flex-direction: column;
@@ -737,24 +744,27 @@ h4 { font-size: 22px; }
 .donation-amount {
     display: block;
     width: 100%;
-    padding: 16px;
+    padding: 14px;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--color-white);
     font-family: var(--font-body);
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     color: var(--color-text-dark);
     text-align: center;
     cursor: pointer;
     transition: all var(--transition);
 }
 
-.donation-amount:hover,
+.donation-amount:hover {
+    border-color: var(--color-orange);
+}
+
 .donation-amount.selected {
-    border-color: var(--color-primary);
-    background: var(--color-primary);
-    color: var(--color-white);
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    font-weight: 600;
 }
 
 .donation-custom {
