@@ -1,0 +1,32 @@
+# Original source files (not needed for website)
+*.ai
+*.eps
+*.pdf
+eest-foundation-social.*
+eest-foundation-2.*
+eest-foundation-3.*
+
+# Large source images in root (already copied to images/ with proper names)
+E-E-S-T-*
+E.E.S.T.*
+image_*
+basketball-*
+below-view-*
+coming-together-*
+elementary-*
+family-volunteers-*
+happy-volunteers-*
+group-of-*
+hands-in-*
+multi-cultural-*
+multiracial-*
+smiling-*
+two-men-*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

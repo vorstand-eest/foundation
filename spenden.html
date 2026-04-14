@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spenden | E.E.S.T. Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <a href="index.html" class="header-logo"><img src="images/logo-full.png" alt="E.E.S.T. Foundation"></a>
+        <ul class="nav-desktop">
+            <li><a href="index.html">Home</a></li>
+            <li class="has-dropdown"><a href="#">Was machen wir?</a>
+                <ul class="nav-dropdown">
+                    <li><a href="loewenpark.html">Der Löwenpark</a></li>
+                    <li><a href="umwelt-und-natur.html">Umwelt &amp; Natur</a></li>
+                    <li><a href="international.html">Stiftung International</a></li>
+                </ul>
+            </li>
+            <li><a href="wer-sind-wir.html">Wer sind wir?</a></li>
+        </ul>
+        <div class="nav-cta"><a href="spenden.html" class="btn btn-primary active">Spenden</a></div>
+        <div class="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></div>
+    </div>
+</header>
+<nav class="nav-mobile">
+    <a href="index.html">Home</a>
+    <a href="#" class="mobile-toggle">Was machen wir?</a>
+    <div class="mobile-sub"><a href="loewenpark.html">Der Löwenpark</a><a href="umwelt-und-natur.html">Umwelt &amp; Natur</a><a href="international.html">Stiftung International</a></div>
+    <a href="wer-sind-wir.html">Wer sind wir?</a>
+    <a href="spenden.html" class="btn btn-primary">Spenden</a>
+</nav>
+<div class="header-spacer"></div>
+
+<!-- CONTENT -->
+<section class="content-section bg-white">
+    <div class="container">
+        <div class="sub-heading">Kontakt &amp; Spenden</div>
+        <h1>Sie möchten spenden?</h1>
+        <div class="green-divider"></div>
+
+        <p>Wir funktionieren ehrenamtlich und die Spenden fließen zu 100% in die Projekte:</p>
+        <ul style="margin: 24px 0; padding-left: 0;">
+            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Löwenpark Erfurt</li>
+            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Baumpflanzaktion in Thüringen</li>
+            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Stiftung International</li>
+        </ul>
+        <p>Ihre Spende ist steuerlich absetzbar. Nach Ihrer Spende erhalten Sie automatisch eine Spendenbescheinigung für Ihre Unterlagen und Ihre Steuererklärung.</p>
+
+        <div class="two-col" style="margin-top: 60px; align-items: start;">
+            <!-- LEFT: Donation Form -->
+            <div>
+                <h3 style="margin-bottom: 24px;">Spendenhöhe</h3>
+
+                <div class="donation-amounts">
+                    <button class="donation-amount selected" data-amount="10">10,00 &euro;</button>
+                    <button class="donation-amount" data-amount="25">25,00 &euro;</button>
+                    <button class="donation-amount" data-amount="50">50,00 &euro;</button>
+                    <button class="donation-amount" data-amount="100">100,00 &euro;</button>
+                    <button class="donation-amount" data-amount="250">250,00 &euro;</button>
+                    <button class="donation-amount" data-amount="500">500,00 &euro;</button>
+                </div>
+
+                <div class="donation-custom">
+                    <input type="number" class="donation-custom-input" placeholder="Individuellen Betrag eingeben" min="1" style="border: none; text-align: center; width: 100%; font-size: 16px; font-family: var(--font-body); outline: none; color: var(--color-text-dark);">
+                </div>
+
+                <a href="#" id="paypal-donate-btn" class="btn btn-primary btn-donate">Jetzt spenden &rarr;</a>
+
+                <p style="margin-top: 16px; font-size: 14px; text-align: center; color: #999;">&#128274; 100% Gesicherte Spende</p>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 24px;">Kontaktformular</h3>
+                    <form action="https://formsubmit.co/vorstand@eest.foundation" method="POST">
+                        <input type="hidden" name="_subject" value="Neue Nachricht von der E.E.S.T. Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Absenden</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- RIGHT: Bank Details & Contact -->
+            <div>
+                <h3 style="margin-bottom: 24px;">Unsere Daten</h3>
+
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <span class="icon">&#128205;</span>
+                        <div>
+                            <strong>Adresse</strong><br>
+                            Bahnhofstrasse 16, 99085 Erfurt
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="icon">&#9993;</span>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:vorstand@eest.foundation" style="color: var(--color-primary);">vorstand@eest.foundation</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bank-details">
+                    <h3>Bankverbindung</h3>
+                    <p>
+                        <strong>Empfänger:</strong> E.E.S.T. Foundation e.S.<br>
+                        <strong>IBAN:</strong> DE26 3706 0193 5002 9410 09<br>
+                        <strong>BIC:</strong> GENODED1PAX (Pax-Bank e.G.)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo"><img src="images/logo-animated.gif" alt="E.E.S.T. Foundation"></a>
+                <p>Die E.E.S.T. Foundation ist eine in Thüringen eingetragene gemeinnützige Stiftung, die 2021 von der Familie des Gründers der <a href="https://juston.com/" target="_blank" rel="noopener" style="color: var(--color-primary);">JustOn GmbH</a> ins Leben gerufen wurde.</p>
+                <div class="footer-legal"><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></div>
+            </div>
+            <div><h4>Links</h4><div class="footer-links"><a href="index.html">Home</a><a href="wer-sind-wir.html">Wer sind wir?</a><a href="spenden.html">Spenden</a></div></div>
+            <div><h4>Was machen wir?</h4><div class="footer-links"><a href="loewenpark.html">Der Löwenpark</a><a href="umwelt-und-natur.html">Umwelt &amp; Natur</a><a href="international.html">Stiftung International</a></div></div>
+            <div class="footer-contact">
+                <h4><a href="spenden.html">Kontakt</a></h4>
+                <p><a href="mailto:vorstand@eest.foundation">vorstand@eest.foundation</a></p>
+                <p>Bahnhofstrasse 16, 99085<br>Erfurt</p>
+                <a href="spenden.html" class="btn btn-primary">Spenden</a>
+            </div>
+        </div>
+        <div class="footer-bottom">Made with love by <a href="https://www.logolove.de" target="_blank" rel="noopener">LogoLove</a></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// PayPal Donation Handler
+document.getElementById('paypal-donate-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    var selected = document.querySelector('.donation-amount.selected');
+    var customInput = document.querySelector('.donation-custom-input');
+    var amount = 10;
+
+    if (customInput && customInput.value) {
+        amount = parseFloat(customInput.value);
+    } else if (selected) {
+        amount = parseFloat(selected.dataset.amount);
+    }
+
+    // PayPal Donation Link — replace YOUR_PAYPAL_ID with actual PayPal business ID
+    var paypalUrl = 'https://www.paypal.com/donate?business=YOUR_PAYPAL_ID&amount=' + amount + '&currency_code=EUR&item_name=Spende+an+E.E.S.T.+Foundation';
+    window.open(paypalUrl, '_blank');
+});
+
+// Custom amount clears selection
+var customInput = document.querySelector('.donation-custom-input');
+if (customInput) {
+    customInput.addEventListener('focus', function() {
+        document.querySelectorAll('.donation-amount').forEach(function(b) {
+            b.classList.remove('selected');
+        });
+    });
+}
+</script>
+</body>
+</html>
