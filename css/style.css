@@ -885,11 +885,11 @@ h4 { font-size: 22px; }
 }
 
 .footer-logo img {
-    width: 80%;
+    width: 78%;
     height: auto;
     margin-bottom: 8px;
-    margin-top: -27px;
-    margin-left: -2px;
+    margin-top: -29px;
+    margin-left: -3px;
 }
 
 .footer-about {
@@ -959,7 +959,7 @@ h4 { font-size: 22px; }
 .footer-contact .btn {
     margin-top: auto;
     position: relative;
-    top: -5px;
+    top: -10px;
 }
 
 .btn-footer-cta {
