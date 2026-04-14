@@ -547,11 +547,11 @@ h4 { font-size: 22px; }
 
 .page-hero-split > a {
     align-self: center;
-    margin-top: 20px;
+    margin-top: 36px;
 }
 
 .btn-hero-cta {
-    padding: 24px 56px;
+    padding: 16px 56px;
     font-size: 22px;
     white-space: nowrap;
     letter-spacing: 0.5px;
