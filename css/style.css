@@ -488,8 +488,8 @@ h4 { font-size: 22px; }
 }
 
 .hero-tagline {
-    font-size: 27px !important;
-    letter-spacing: 1.2px;
+    font-size: 22px !important;
+    letter-spacing: 3.5px;
 }
 
 .hero .btn-group {
@@ -541,51 +541,48 @@ h4 { font-size: 22px; }
     margin-bottom: 16px;
 }
 
-/* E.E.S.T. Cards (Education, Environment, Sport, Tolerance) */
-.eest-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 32px;
+/* E.E.S.T. Blurbs (Education, Environment, Sport, Tolerance) */
+.eest-blurbs {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 28px;
 }
 
-.eest-card {
-    padding: 24px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-card);
-    background: var(--color-white);
+.eest-blurb {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: flex-start;
 }
 
 .eest-icon {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-orange);
+    padding: 12px;
 }
 
 .eest-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
-.eest-card h3 {
-    color: var(--color-orange);
+.eest-blurb h3 {
+    color: var(--color-black);
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 6px;
 }
 
-.eest-card p {
-    font-size: 14px;
-    line-height: 1.6;
+.eest-blurb p {
+    font-size: 15px;
+    line-height: 1.7;
 }
 
 /* ============================================
@@ -1027,9 +1024,9 @@ h4 { font-size: 22px; }
         direction: ltr;
     }
 
-    /* EEST Cards */
-    .eest-cards {
-        grid-template-columns: 1fr;
+    /* EEST Blurbs */
+    .eest-blurbs {
+        gap: 24px;
     }
 
     /* Team */
