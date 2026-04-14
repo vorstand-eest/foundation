@@ -885,8 +885,8 @@ h4 { font-size: 22px; }
 }
 
 .footer-logo img {
-    height: 50px;
-    width: auto;
+    width: 100%;
+    height: auto;
     margin-bottom: 16px;
 }
 
