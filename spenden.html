@@ -106,16 +106,38 @@
                 </div>
 
                 <div id="receipt-details" style="display: none; margin-top: 20px; padding: 24px; background: var(--color-bg-light); border-radius: 12px;">
-                    <div style="margin-bottom: 16px;">
-                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Name</label>
-                        <input type="text" id="donor-name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Vorname</label>
+                            <input type="text" id="donor-firstname" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Nachname</label>
+                            <input type="text" id="donor-lastname" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
                     </div>
-                    <div style="margin-bottom: 16px;">
-                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Adresse</label>
-                        <input type="text" id="donor-address" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Straße</label>
+                            <input type="text" id="donor-street" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Nr.</label>
+                            <input type="text" id="donor-housenr" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px; margin-bottom: 12px;">
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">PLZ</label>
+                            <input type="text" id="donor-zip" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Ort</label>
+                            <input type="text" id="donor-city" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                        </div>
                     </div>
                     <div>
-                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">E-Mail</label>
+                        <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">E-Mail</label>
                         <input type="email" id="donor-email" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
                     </div>
                 </div>
@@ -216,10 +238,14 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     var receiptCheck = document.getElementById('receipt-check');
     var custom = '';
     if (receiptCheck && receiptCheck.checked) {
-        var name = document.getElementById('donor-name').value;
-        var address = document.getElementById('donor-address').value;
+        var fn = document.getElementById('donor-firstname').value;
+        var ln = document.getElementById('donor-lastname').value;
+        var street = document.getElementById('donor-street').value;
+        var nr = document.getElementById('donor-housenr').value;
+        var zip = document.getElementById('donor-zip').value;
+        var city = document.getElementById('donor-city').value;
         var email = document.getElementById('donor-email').value;
-        custom = 'Bescheinigung: ' + name + ', ' + address + ', ' + email;
+        custom = 'Bescheinigung: ' + fn + ' ' + ln + ', ' + street + ' ' + nr + ', ' + zip + ' ' + city + ', ' + email;
     }
 
     // PayPal Donation Link — replace YOUR_PAYPAL_ID with actual PayPal business ID
