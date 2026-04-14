@@ -97,7 +97,7 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 - BIC: GENODED1PAX (Pax-Bank e.G.)
 
 ## Technisches
-- Kontaktformular: Formsubmit (vorstand@eest.foundation)
+- Kontakt: E-Mail-Link im Footer (kein Kontaktformular)
 - Spendenformular: PayPal-Integration (PayPal-ID noch einzutragen)
 - Favicon: favicon.svg (Basketball-Icon aus Logo)
 - Kein Google Maps, kein Cookie-Banner (noch)

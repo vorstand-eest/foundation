@@ -779,47 +779,6 @@ h4 { font-size: 22px; }
     margin-top: 24px;
 }
 
-/* Contact Form */
-.contact-form {
-    margin-top: 48px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-family: var(--font-button);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-text-dark);
-    margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    color: var(--color-text-dark);
-    transition: border-color var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
 /* Bank Details */
 .bank-details {
     margin-top: 48px;
