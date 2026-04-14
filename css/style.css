@@ -771,6 +771,19 @@ h4 { font-size: 22px; }
     border-color: var(--color-primary);
 }
 
+.donation-custom.selected {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+}
+
+.donation-custom.selected input {
+    color: #fff !important;
+}
+
+.donation-custom.selected input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
 .btn-donate {
     display: block;
     width: 100%;

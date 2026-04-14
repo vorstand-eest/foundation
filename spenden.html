@@ -67,8 +67,8 @@
                     <button class="donation-amount" data-amount="500">500 &euro;</button>
                 </div>
 
-                <div class="donation-custom">
-                    <input type="number" class="donation-custom-input" placeholder="Individuellen Betrag eingeben" min="1" style="border: none; text-align: center; width: 100%; font-size: 16px; font-family: var(--font-body); outline: none; color: var(--color-text-dark);">
+                <div class="donation-custom" id="custom-amount-box">
+                    <input type="text" class="donation-custom-input" id="custom-amount" placeholder="Individuellen Betrag eingeben" style="border: none; text-align: center; width: 100%; font-size: 18px; font-weight: 600; font-family: var(--font-body); outline: none; color: var(--color-text-dark);">
                 </div>
 
                 <h3 style="margin-bottom: 20px; margin-top: 40px;">Projekt auswählen</h3>
@@ -116,15 +116,9 @@
                             <input type="text" id="donor-lastname" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
                         </div>
                     </div>
-                    <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 12px; margin-bottom: 12px;">
-                        <div>
-                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Straße</label>
-                            <input type="text" id="donor-street" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
-                        </div>
-                        <div>
-                            <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Nr.</label>
-                            <input type="text" id="donor-housenr" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
-                        </div>
+                    <div style="margin-bottom: 12px;">
+                        <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Straße und Hausnummer</label>
+                        <input type="text" id="donor-street" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 12px; margin-bottom: 12px;">
                         <div>
@@ -215,8 +209,9 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     var customInput = document.querySelector('.donation-custom-input');
     var amount = 100;
 
-    if (customInput && customInput.value) {
-        amount = parseFloat(customInput.value);
+    var customVal = customInput ? customInput.value.replace(/[^0-9]/g, '') : '';
+    if (customVal && parseInt(customVal) > 0) {
+        amount = parseInt(customVal);
     } else if (selected) {
         amount = parseFloat(selected.dataset.amount);
     }
@@ -241,11 +236,10 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
         var fn = document.getElementById('donor-firstname').value;
         var ln = document.getElementById('donor-lastname').value;
         var street = document.getElementById('donor-street').value;
-        var nr = document.getElementById('donor-housenr').value;
         var zip = document.getElementById('donor-zip').value;
         var city = document.getElementById('donor-city').value;
         var email = document.getElementById('donor-email').value;
-        custom = 'Bescheinigung: ' + fn + ' ' + ln + ', ' + street + ' ' + nr + ', ' + zip + ' ' + city + ', ' + email;
+        custom = 'Bescheinigung: ' + fn + ' ' + ln + ', ' + street + ', ' + zip + ' ' + city + ', ' + email;
     }
 
     // PayPal Donation Link — replace YOUR_PAYPAL_ID with actual PayPal business ID
@@ -254,15 +248,39 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     window.open(paypalUrl, '_blank');
 });
 
-// Custom amount clears selection
-var customInput = document.querySelector('.donation-custom-input');
-if (customInput) {
+// Custom amount: highlight box, clear preset selection, format with Euro
+var customInput = document.getElementById('custom-amount');
+var customBox = document.getElementById('custom-amount-box');
+if (customInput && customBox) {
     customInput.addEventListener('focus', function() {
+        // Remove preset selection
         document.querySelectorAll('.donation-amount').forEach(function(b) {
             b.classList.remove('selected');
         });
+        // Highlight custom box
+        customBox.classList.add('selected');
+        // Remove Euro sign for editing
+        var val = this.value.replace(/[^0-9]/g, '');
+        this.value = val;
+    });
+    customInput.addEventListener('blur', function() {
+        var val = this.value.replace(/[^0-9]/g, '');
+        if (val && parseInt(val) > 0) {
+            this.value = val + ' \u20AC';
+        } else {
+            this.value = '';
+            customBox.classList.remove('selected');
+        }
     });
 }
+
+// When clicking a preset amount, deselect custom box
+document.querySelectorAll('.donation-amount').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        if (customBox) customBox.classList.remove('selected');
+        if (customInput) customInput.value = '';
+    });
+});
 </script>
 </body>
 </html>
