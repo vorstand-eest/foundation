@@ -41,33 +41,77 @@
 </nav>
 <div class="header-spacer"></div>
 
-<!-- CONTENT -->
+<!-- HERO -->
+<section style="background: rgba(243, 131, 20, 0.06); padding: 80px 0;">
+    <div class="container">
+        <div class="sub-heading" style="color: #F38314;">Spenden</div>
+        <h1>Sie möchten uns unterstützen?</h1>
+        <p style="font-size: 18px; margin-top: 16px; max-width: 600px;">Wir arbeiten ehrenamtlich und Ihre Spende fließt zu 100% in unsere Projekte.</p>
+    </div>
+</section>
+
+<!-- DONATION FORM -->
 <section class="content-section bg-white">
     <div class="container">
-        <div class="sub-heading">Kontakt &amp; Spenden</div>
-        <h1>Sie möchten spenden?</h1>
-        <div class="green-divider"></div>
+        <div class="two-col" style="gap: 60px; align-items: start;">
 
-        <p>Wir funktionieren ehrenamtlich und die Spenden fließen zu 100% in die Projekte:</p>
-        <ul style="margin: 24px 0; padding-left: 0;">
-            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Löwenpark Erfurt</li>
-            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Baumpflanzaktion in Thüringen</li>
-            <li style="padding: 8px 0; font-size: 18px; font-weight: 600; color: var(--color-text-dark);">Stiftung International</li>
-        </ul>
-        <p>Ihre Spende ist steuerlich absetzbar. Nach Ihrer Spende erhalten Sie automatisch eine Spendenbescheinigung für Ihre Unterlagen und Ihre Steuererklärung.</p>
-
-        <div class="two-col" style="margin-top: 60px; align-items: start;">
-            <!-- LEFT: Donation Form -->
+            <!-- LEFT: Projektauswahl -->
             <div>
-                <h3 style="margin-bottom: 24px;">Spendenhöhe</h3>
+                <h3 style="margin-bottom: 20px;">Projekt auswählen</h3>
+                <div class="donate-projects">
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="allgemein" checked>
+                        <span>Allgemein spenden</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="loewenpark">
+                        <span>Löwenpark</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="project" value="baumpflanzaktion">
+                        <span>Baumpflanzaktion</span>
+                    </label>
+                </div>
+
+                <!-- Spendenbescheinigung -->
+                <h3 style="margin-bottom: 20px; margin-top: 40px;">Spendenbescheinigung</h3>
+                <div class="donate-projects">
+                    <label class="donate-radio">
+                        <input type="radio" name="receipt" value="anonym" checked onchange="document.getElementById('receipt-details').style.display='none'">
+                        <span>Anonym spenden</span>
+                    </label>
+                    <label class="donate-radio">
+                        <input type="radio" name="receipt" value="bescheinigung" onchange="document.getElementById('receipt-details').style.display='block'">
+                        <span>Spendenbescheinigung erhalten</span>
+                    </label>
+                </div>
+
+                <div id="receipt-details" style="display: none; margin-top: 20px; padding: 24px; background: var(--color-bg-light); border-radius: 12px;">
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Name</label>
+                        <input type="text" id="donor-name" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Adresse</label>
+                        <input type="text" id="donor-address" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 14px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">E-Mail</label>
+                        <input type="email" id="donor-email" style="width: 100%; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 8px; font-size: 15px; font-family: var(--font-body);">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Spendenhöhe -->
+            <div>
+                <h3 style="margin-bottom: 20px;">Spendenhöhe</h3>
 
                 <div class="donation-amounts">
-                    <button class="donation-amount selected" data-amount="10">10,00 &euro;</button>
-                    <button class="donation-amount" data-amount="25">25,00 &euro;</button>
-                    <button class="donation-amount" data-amount="50">50,00 &euro;</button>
-                    <button class="donation-amount" data-amount="100">100,00 &euro;</button>
-                    <button class="donation-amount" data-amount="250">250,00 &euro;</button>
-                    <button class="donation-amount" data-amount="500">500,00 &euro;</button>
+                    <button class="donation-amount" data-amount="25">25 &euro;</button>
+                    <button class="donation-amount" data-amount="50">50 &euro;</button>
+                    <button class="donation-amount selected" data-amount="100">100 &euro;</button>
+                    <button class="donation-amount" data-amount="250">250 &euro;</button>
+                    <button class="donation-amount" data-amount="500">500 &euro;</button>
                 </div>
 
                 <div class="donation-custom">
@@ -76,41 +120,7 @@
 
                 <a href="#" id="paypal-donate-btn" class="btn btn-primary btn-donate">Jetzt spenden &rarr;</a>
 
-                <p style="margin-top: 16px; font-size: 14px; text-align: center; color: #999;">&#128274; 100% Gesicherte Spende</p>
-
-            </div>
-
-            <!-- RIGHT: Bank Details & Contact -->
-            <div>
-                <h3 style="margin-bottom: 24px;">Unsere Daten</h3>
-
-                <div class="contact-info">
-                    <div class="contact-info-item">
-                        <span class="icon">&#128205;</span>
-                        <div>
-                            <strong>Adresse</strong><br>
-                            E.E.S.T. Foundation e.S.<br>
-                            Bahnhofstr. 16<br>
-                            99085 Erfurt
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <span class="icon">&#9993;</span>
-                        <div>
-                            <strong>Email</strong><br>
-                            <a href="mailto:vorstand@eest.foundation" style="color: var(--color-primary);">vorstand@eest.foundation</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bank-details">
-                    <h3>Bankverbindung</h3>
-                    <p>
-                        <strong>Empfänger:</strong> E.E.S.T. Foundation e.S.<br>
-                        <strong>IBAN:</strong> DE74 8204 0000 0102 1971 00<br>
-                        <strong>BIC:</strong> COBADEFFXXX
-                    </p>
-                </div>
+                <p style="margin-top: 16px; font-size: 13px; text-align: center; color: #999;">Ihre Spende ist steuerlich absetzbar.</p>
             </div>
         </div>
     </div>
@@ -179,7 +189,7 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     e.preventDefault();
     var selected = document.querySelector('.donation-amount.selected');
     var customInput = document.querySelector('.donation-custom-input');
-    var amount = 10;
+    var amount = 100;
 
     if (customInput && customInput.value) {
         amount = parseFloat(customInput.value);
@@ -187,8 +197,26 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
         amount = parseFloat(selected.dataset.amount);
     }
 
+    // Get project selection
+    var project = document.querySelector('input[name="project"]:checked').value;
+    var itemName = 'Spende an E.E.S.T. Foundation';
+    if (project !== 'allgemein') {
+        itemName += ' - ' + project.charAt(0).toUpperCase() + project.slice(1);
+    }
+
+    // Get receipt info if requested
+    var receipt = document.querySelector('input[name="receipt"]:checked').value;
+    var custom = '';
+    if (receipt === 'bescheinigung') {
+        var name = document.getElementById('donor-name').value;
+        var address = document.getElementById('donor-address').value;
+        var email = document.getElementById('donor-email').value;
+        custom = 'Bescheinigung: ' + name + ', ' + address + ', ' + email;
+    }
+
     // PayPal Donation Link — replace YOUR_PAYPAL_ID with actual PayPal business ID
-    var paypalUrl = 'https://www.paypal.com/donate?business=YOUR_PAYPAL_ID&amount=' + amount + '&currency_code=EUR&item_name=Spende+an+E.E.S.T.+Foundation';
+    var paypalUrl = 'https://www.paypal.com/donate?business=YOUR_PAYPAL_ID&amount=' + amount + '&currency_code=EUR&item_name=' + encodeURIComponent(itemName);
+    if (custom) paypalUrl += '&custom=' + encodeURIComponent(custom);
     window.open(paypalUrl, '_blank');
 });
 
