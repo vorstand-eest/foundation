@@ -1082,8 +1082,40 @@ h4 { font-size: 22px; }
 
     /* Page Hero Mobile */
     .page-hero {
-        height: 35vh;
-        min-height: 250px;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .page-hero-content {
+        padding: 0 20px;
+    }
+
+    .page-hero-split {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .page-hero-split > a {
+        margin-top: 0;
+    }
+
+    .btn-hero-cta {
+        padding: 12px 32px;
+        font-size: 16px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 32px;
+    }
+
+    /* Content Hero Mobile */
+    .content-hero {
+        min-height: 40vh;
+    }
+
+    .content-hero-text {
+        padding: 40px 0;
     }
 
     /* Two Column → Stacked */
@@ -1120,8 +1152,12 @@ h4 { font-size: 22px; }
 
     /* Footer */
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 32px;
+    }
+
+    .footer-bottom-row .footer-bank {
+        grid-column: auto;
     }
 
     /* Buttons */
