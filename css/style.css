@@ -2,6 +2,35 @@
    E.E.S.T. Foundation - Main Stylesheet
    ============================================ */
 
+/* --- Self-hosted Fonts (no Google connection) --- */
+@font-face {
+    font-family: 'Urbanist';
+    src: url('../fonts/urbanist.woff2') format('woff2');
+    font-weight: 500 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins-500.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/poppins-600.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
 /* --- CSS Variables --- */
 :root {
     --color-primary: #0187E7;
