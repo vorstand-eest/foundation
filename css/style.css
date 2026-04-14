@@ -744,7 +744,7 @@ h4 { font-size: 22px; }
 .footer {
     background: var(--color-footer);
     color: var(--color-footer-text);
-    padding: 60px 0 40px;
+    padding: 36px 0 28px;
 }
 
 .footer-grid {
