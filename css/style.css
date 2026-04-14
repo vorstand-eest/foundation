@@ -1217,6 +1217,15 @@ h4 { font-size: 22px; }
 
     .footer-bottom-row .footer-bank {
         grid-column: auto;
+        order: 2;
+    }
+
+    .footer-bottom-row .footer-legal {
+        order: 3;
+    }
+
+    .footer-bottom-row > div:last-child {
+        order: 1;
     }
 
     /* Buttons */
