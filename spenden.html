@@ -98,21 +98,21 @@
             <div style="display: flex; flex-direction: column;">
                 <h3 style="margin-bottom: 20px;">Projekt auswählen</h3>
 
-                <select id="donate-project" class="donate-select" style="margin-bottom: 28px;" onchange="this.classList.toggle('has-selection', this.value !== 'allgemein')">
+                <select id="donate-project" class="donate-select" style="margin-bottom: 20px;" onchange="this.classList.toggle('has-selection', this.value !== 'allgemein')">
                     <option value="allgemein" selected>Nicht projektspezifisch</option>
                     <option value="loewenpark">Projekt Löwenpark</option>
                     <option value="baumpflanzaktion">Projekt Baumpflanzaktion</option>
                 </select>
 
                 <!-- Spendenbescheinigung -->
-                <div style="margin-top: 28px;">
+                <div style="margin-top: 16px;">
                     <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--color-text-dark);">
                         <input type="checkbox" id="receipt-check" checked style="width: 20px; height: 20px; accent-color: var(--color-orange); cursor: pointer;" onchange="document.getElementById('receipt-details').style.display = this.checked ? 'block' : 'none'">
                         Spendenbescheinigung erhalten
                     </label>
                 </div>
 
-                <div id="receipt-details" style="display: block; margin-top: 20px; padding: 24px; background: var(--color-bg-light); border-radius: 12px;">
+                <div id="receipt-details" style="display: block; margin-top: 12px; padding: 20px; background: var(--color-bg-light); border-radius: 12px;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
                         <div>
                             <label style="display: block; font-size: 13px; font-weight: 500; color: var(--color-text-dark); margin-bottom: 4px;">Vorname</label>
