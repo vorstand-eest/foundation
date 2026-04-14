@@ -278,8 +278,13 @@ h4 { font-size: 22px; }
 
 .nav-desktop > li > a:hover,
 .nav-desktop > li > a.active {
-    color: var(--color-orange);
+    color: #0086e6;
 }
+
+/* Active colors for "Was machen wir?" based on subpage */
+.nav-desktop > li > a.active-blue { color: #0086e6; }
+.nav-desktop > li > a.active-green { color: #46a244; }
+.nav-desktop > li > a.active-purple { color: #7b2fcc; }
 
 /* Dropdown */
 .nav-dropdown {
@@ -314,8 +319,12 @@ h4 { font-size: 22px; }
 
 .nav-dropdown a:hover {
     background: var(--color-bg-light);
-    color: var(--color-primary);
 }
+
+/* Individual dropdown hover colors */
+.nav-dropdown a[href="loewenpark.html"]:hover { color: #0086e6; }
+.nav-dropdown a[href="umwelt-und-natur.html"]:hover { color: #46a244; }
+.nav-dropdown a[href="international.html"]:hover { color: #7b2fcc; }
 
 /* Dropdown Arrow */
 .has-dropdown > a::after {
