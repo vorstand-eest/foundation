@@ -460,6 +460,16 @@ h4 { font-size: 22px; }
     font-size: 24px;
 }
 
+.hero-subtitle {
+    font-size: 34px !important;
+    letter-spacing: 4px;
+}
+
+.hero-tagline {
+    font-size: 26px !important;
+    letter-spacing: 1px;
+}
+
 .hero .btn-group {
     justify-content: center;
 }
