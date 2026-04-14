@@ -37,7 +37,7 @@
     <a href="#" class="mobile-toggle">Was machen wir?</a>
     <div class="mobile-sub"><a href="loewenpark.html">Löwenpark</a><a href="umwelt-und-natur.html">Umwelt und Natur</a><a href="international.html">International</a></div>
     <a href="wer-sind-wir.html">Wer sind wir?</a>
-    <a href="spenden.html" class="btn btn-primary">Spenden</a>
+    <a href="spenden.html" class="btn" style="background: transparent; border: 2px solid #F38314; color: #F38314;">Spenden</a>
 </nav>
 <div class="header-spacer"></div>
 
@@ -59,13 +59,6 @@
             <div>
                 <h3 style="margin-bottom: 20px;">Spendenhöhe &amp; Intervall</h3>
 
-                <select id="donate-interval" style="width: 100%; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 16px; font-family: var(--font-body); color: var(--color-text-dark); background: #fff; cursor: pointer; margin-bottom: 16px;">
-                    <option value="einmalig" selected>Einmalig spenden</option>
-                    <option value="monatlich">Monatlich spenden</option>
-                    <option value="halbjaehrlich">Halbjährlich spenden</option>
-                    <option value="jaehrlich">Jährlich spenden</option>
-                </select>
-
                 <div class="donate-projects">
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="50">
@@ -76,25 +69,36 @@
                         <span>100 &euro;</span>
                     </label>
                     <label class="donate-radio">
-                        <input type="radio" name="amount" value="250">
-                        <span>250 &euro;</span>
+                        <input type="radio" name="amount" value="200">
+                        <span>200 &euro;</span>
                     </label>
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="500">
                         <span>500 &euro;</span>
                     </label>
                     <label class="donate-radio">
+                        <input type="radio" name="amount" value="1000">
+                        <span>1.000 &euro;</span>
+                    </label>
+                    <label class="donate-radio">
                         <input type="radio" name="amount" value="custom" id="custom-radio">
                         <input type="text" id="custom-amount" placeholder="Individueller Betrag" style="border: none; outline: none; font-size: 15px; font-weight: 500; font-family: var(--font-body); color: var(--color-text-dark); width: 100%;">
                     </label>
                 </div>
+
+                <select id="donate-interval" class="donate-select" style="margin-top: 16px;" onchange="this.classList.toggle('has-selection', this.value !== 'einmalig')">
+                    <option value="einmalig" selected>Einmalig spenden</option>
+                    <option value="monatlich">Monatlich spenden</option>
+                    <option value="halbjaehrlich">Halbjährlich spenden</option>
+                    <option value="jaehrlich">Jährlich spenden</option>
+                </select>
             </div>
 
             <!-- RIGHT: Projekt, Bescheinigung, Button -->
             <div style="display: flex; flex-direction: column;">
                 <h3 style="margin-bottom: 20px;">Projekt auswählen</h3>
 
-                <select id="donate-project" style="width: 100%; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 16px; font-family: var(--font-body); color: var(--color-text-dark); background: #fff; cursor: pointer; margin-bottom: 28px;">
+                <select id="donate-project" class="donate-select" style="margin-bottom: 28px;" onchange="this.classList.toggle('has-selection', this.value !== 'allgemein')">
                     <option value="allgemein" selected>Nicht projektspezifisch</option>
                     <option value="loewenpark">Projekt Löwenpark</option>
                     <option value="baumpflanzaktion">Projekt Baumpflanzaktion</option>
@@ -271,6 +275,15 @@ if (customInput) {
         }
     });
 }
+
+// When selecting a fixed amount, clear custom input
+document.querySelectorAll('input[name="amount"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (this.value !== 'custom' && customInput) {
+            customInput.value = '';
+        }
+    });
+});
 </script>
 </body>
 </html>
