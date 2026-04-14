@@ -887,8 +887,8 @@ h4 { font-size: 22px; }
 .footer-logo img {
     width: 70%;
     height: auto;
-    margin-bottom: 16px;
-    margin-top: -20px;
+    margin-bottom: 8px;
+    margin-top: -25px;
 }
 
 .footer-about {
@@ -902,6 +902,7 @@ h4 { font-size: 22px; }
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 16px;
+    margin-top: -8px;
 }
 
 .footer-legal {
