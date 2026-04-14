@@ -59,38 +59,29 @@
             <div>
                 <h3 style="margin-bottom: 20px;">Spendenhöhe &amp; Intervall</h3>
 
-                <div class="donate-projects">
-                    <label class="donate-radio">
-                        <input type="radio" name="interval" value="einmalig" checked>
-                        <span>Einmalig spenden</span>
-                    </label>
-                    <label class="donate-radio">
-                        <input type="radio" name="interval" value="monatlich">
-                        <span>Monatlich spenden</span>
-                    </label>
-                    <label class="donate-radio">
-                        <input type="radio" name="interval" value="jaehrlich">
-                        <span>Jährlich spenden</span>
-                    </label>
-                </div>
+                <select id="donate-interval" style="width: 100%; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 16px; font-family: var(--font-body); color: var(--color-text-dark); background: #fff; cursor: pointer; margin-bottom: 16px;">
+                    <option value="einmalig" selected>Einmalig spenden</option>
+                    <option value="monatlich">Monatlich spenden</option>
+                    <option value="halbjaehrlich">Halbjährlich spenden</option>
+                    <option value="jaehrlich">Jährlich spenden</option>
+                </select>
 
-                <h3 style="margin-bottom: 16px; margin-top: 28px;">Betrag</h3>
                 <div class="donate-projects">
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="50">
-                        <span>50 €</span>
+                        <span>50 &euro;</span>
                     </label>
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="100" checked>
-                        <span>100 €</span>
+                        <span>100 &euro;</span>
                     </label>
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="250">
-                        <span>250 €</span>
+                        <span>250 &euro;</span>
                     </label>
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="500">
-                        <span>500 €</span>
+                        <span>500 &euro;</span>
                     </label>
                     <label class="donate-radio">
                         <input type="radio" name="amount" value="custom" id="custom-radio">
@@ -102,20 +93,12 @@
             <!-- RIGHT: Projekt, Bescheinigung, Button -->
             <div style="display: flex; flex-direction: column;">
                 <h3 style="margin-bottom: 20px;">Projekt auswählen</h3>
-                <div class="donate-projects">
-                    <label class="donate-radio">
-                        <input type="radio" name="project" value="allgemein" checked>
-                        <span>Nicht projektspezifisch</span>
-                    </label>
-                    <label class="donate-radio">
-                        <input type="radio" name="project" value="loewenpark">
-                        <span>Projekt Löwenpark</span>
-                    </label>
-                    <label class="donate-radio">
-                        <input type="radio" name="project" value="baumpflanzaktion">
-                        <span>Projekt Baumpflanzaktion</span>
-                    </label>
-                </div>
+
+                <select id="donate-project" style="width: 100%; padding: 14px 16px; border: 1px solid var(--color-border); border-radius: 10px; font-size: 16px; font-family: var(--font-body); color: var(--color-text-dark); background: #fff; cursor: pointer; margin-bottom: 28px;">
+                    <option value="allgemein" selected>Nicht projektspezifisch</option>
+                    <option value="loewenpark">Projekt Löwenpark</option>
+                    <option value="baumpflanzaktion">Projekt Baumpflanzaktion</option>
+                </select>
 
                 <!-- Spendenbescheinigung -->
                 <div style="margin-top: 28px;">
@@ -158,7 +141,7 @@
 
                 <a href="#" id="paypal-donate-btn" class="btn btn-donate" style="margin-top: auto; background: #F38314; color: #fff;">Jetzt mit PayPal spenden &rarr;</a>
 
-                <p style="margin-top: 16px; font-size: 13px; text-align: center; color: #999;">Ihre Spende ist steuerlich absetzbar.</p>
+                
             </div>
         </div>
     </div>
@@ -239,14 +222,14 @@ document.getElementById('paypal-donate-btn').addEventListener('click', function(
     }
 
     // Get project
-    var project = document.querySelector('input[name="project"]:checked').value;
+    var project = document.getElementById('donate-project').value;
     var itemName = 'Spende an E.E.S.T. Foundation';
     if (project !== 'allgemein') {
         itemName += ' - ' + project.charAt(0).toUpperCase() + project.slice(1);
     }
 
     // Get interval
-    var interval = document.querySelector('input[name="interval"]:checked').value;
+    var interval = document.getElementById('donate-interval').value;
     if (interval !== 'einmalig') {
         itemName += ' (' + interval + ')';
     }
