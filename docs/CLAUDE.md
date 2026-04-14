@@ -3,8 +3,8 @@
 ## Projektübersicht
 Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages.
 - **Repository:** vorstand-eest/foundation
-- **Live-URL:** https://vorstand-eest.github.io/foundation/
-- **Alte WordPress-Seite:** https://eestfoundation.website-love.de/
+- **Live-URL:** https://eest.foundation
+- **Domain:** eest.foundation (DNS bei Regfish, CNAME im Repo)
 
 ## Namenskonventionen
 
@@ -13,6 +13,8 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 - **E.E.S.T. Foundation e.S.** — "e." klein, "S." groß (eingetragene Stiftung)
 - **Bahnhofstr.** — abgekürzt wegen internationaler Kompatibilität (kein ß)
 - **Global EduPals** — CamelCase
+- **Schrägstrich:** kein Leerzeichen davor, Leerzeichen danach (z.B. "Haftungsausschluss/ Haftung für Inhalte")
+- **Paragrafenzeichen:** ohne Leerzeichen vor Nummer (z.B. §5, §§8)
 
 ### Dateinamen (HTML)
 - Alles Kleinbuchstaben, Bindestriche als Trenner
@@ -27,14 +29,14 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 
 | Seite | Datei | Farbthema | Status |
 |---|---|---|---|
-| Home | index.html | Mehrfarbig (E.E.S.T.) | Fertig |
+| Home | index.html | Blau (#0086e6) für Subheadings | Fertig |
 | Löwenpark | loewenpark.html | Blau (#0086e6) | Fertig |
 | Umwelt & Natur | umwelt-und-natur.html | Grün (#46a244) | Fertig |
 | International | international.html | Lila (#7b2fcc) | Fertig |
 | Wer sind wir? | wer-sind-wir.html | Blau (#0086e6) | Fertig |
-| Spenden | spenden.html | — | Platzhalter, wird später |
-| Impressum | impressum.html | — | Platzhalter, wird später |
-| Datenschutz | datenschutz.html | — | Platzhalter, wird später |
+| Spenden | spenden.html | Orange (#F38314) | Fertig (PayPal-ID fehlt) |
+| Impressum | impressum.html | Blau (#0086e6) | Fertig |
+| Datenschutz | datenschutz.html | Blau (#0086e6) | Fertig |
 
 ## Farbsystem (aus dem Basketball-Logo)
 
@@ -42,15 +44,16 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 |---|---|---|---|
 | Education / Löwenpark | Blau | #0086e6 | Subheadings, Divider, Icons, Nav-Active |
 | Environment / Umwelt | Grün | #46a244 | Subheadings, Divider, Icons, Nav-Active |
-| Sport | Orange | #F38314 | Icons, Homepage-Karten |
+| Sport | Orange | #F38314 | Icons, Homepage-Karten, Spendenseite |
 | Tolerance / International | Lila | #7b2fcc | Subheadings, Divider, Icons, Nav-Active |
 | Primary (Buttons) | Blau | #0187E7 | CTA-Buttons allgemein |
 | Footer-Hintergrund | Grau | #35494c | Aus Logo "FOUNDATION" Schriftfarbe |
 
-## Schriften
-- **Headings:** Urbanist (weight 500)
-- **Body:** Open Sans (Regular)
-- **Buttons/Nav:** Poppins (weight 500)
+## Schriften (selbst gehostet, kein Google Fonts)
+- **Headings:** Urbanist (weight 500-600) — `fonts/urbanist.woff2`
+- **Body:** Open Sans (weight 400) — `fonts/opensans.woff2`
+- **Buttons/Nav:** Poppins (weight 500-600) — `fonts/poppins-500.woff2`, `fonts/poppins-600.woff2`
+- Alle Fonts lokal in `/fonts/`, keine externen Verbindungen
 
 ## Typografie
 - H1: 72px (Hero), global nicht definiert
@@ -61,21 +64,35 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 ## Seitenlayout-Muster
 
 ### Projektseiten (Löwenpark, Umwelt, International)
-1. **Hero-Bild mit Overlay:** Subheading (Projektfarbe) + H1 (weiß) + Untertitel + "Unterstützen"-Button (rechts, Projektfarbe)
-2. **Content-Sektion:** Bild links/rechts + Text mit Subheading (Projektfarbe) + H2 + Divider (Projektfarbe)
+1. **Hero-Bild mit Overlay:** Subheading (Projektfarbe) + H1 (weiß) + Untertitel + "Unterstützen"-Button (rechts, Outline-Stil)
+2. **Content-Sektion:** Bild links/rechts (stretch) + Text mit Subheading (Projektfarbe) + H2 + Divider (Projektfarbe)
 3. **Content-Hero (optional):** Vollbreites Bild mit dunklem Overlay + weißer Text
+4. **"Unterstützen"-Links** leiten auf `spenden.html?projekt={name}` weiter
+
+### Spendenseite
+- Hero: sanftes Orange (6% Opacity)
+- Links: Beträge (50/100/200/500/1000 + individuell) + Intervall-Dropdown
+- Rechts: Projekt-Dropdown + Spendenbescheinigung (Akkordeon) + PayPal-Button (Orange)
+- URL-Parameter `?projekt=` setzt Projekt-Dropdown automatisch
 
 ### Navigation
 - Aktive Seite: Blau (#0086e6)
 - "Was machen wir?" wechselt Farbe je nach Unterseite (Blau/Grün/Lila)
 - Dropdown-Hover: individuelle Projektfarben
+- Mobile: Hamburger-Menü, Spenden-Button transparent mit orangem Rand
 
-### Footer
+### Footer (zwei Zeilen)
+- **Obere Zeile:** Logo (77%, animiertes GIF) + Text | Links | Projekte | Kontakt
+- **Trennlinie:** dezentes Dunkelgrau (15% Opacity)
+- **Untere Zeile:** Impressum/Datenschutz/Designed with Love | Spendenkonto (über 2 Spalten) | Spenden-Button
 - Hintergrund: #35494c
-- Animiertes Logo-GIF (logo-footer.gif), 77% Breite
-- Alle Links in Grau (#999), kein Blau
+- Nicht-verlinkte Texte: weiß, Links: #999, Hover: weiß
 - Spenden-Button: Outline-Stil (weißer Rand, transparent)
-- "Designed with Love by LogoLove" unter Impressum/Datenschutz
+- Mobile: Reihenfolge Spenden-Button → Spendenkonto → Impressum
+
+### Impressum / Datenschutz
+- Zweispaltig (Impressum), Einspaltig (Datenschutz)
+- Blauer Divider (#0086e6)
 
 ## Team
 - **Marko** — Stifter
@@ -93,21 +110,21 @@ Statische HTML/CSS/JS-Website der E.E.S.T. Foundation, gehostet auf GitHub Pages
 ## Kontaktdaten
 - E-Mail: vorstand@eest.foundation
 - Adresse: E.E.S.T. Foundation e.S., Bahnhofstr. 16, 99085 Erfurt
-- IBAN: DE26 3706 0193 5002 9410 09
-- BIC: GENODED1PAX (Pax-Bank e.G.)
+- Sitz der Stiftung: Erfurt
+- Steuernummer: 151/ 141/ 05519
+- IBAN: DE74 8204 0000 0102 1971 00
+- BIC: COBADEFFXXX
 
 ## Technisches
-- Kontakt: E-Mail-Link im Footer (kein Kontaktformular)
+- Kontakt: E-Mail-Link im Footer (kein Kontaktformular, kein Formsubmit)
 - Spendenformular: PayPal-Integration (PayPal-ID noch einzutragen)
 - Favicon: favicon.svg (Basketball-Icon aus Logo)
-- Kein Google Maps, kein Cookie-Banner (noch)
+- Fonts: selbst gehostet in `/fonts/` (kein Google Fonts)
+- Kein Google Maps, keine Cookies, kein Cookie-Banner
 - Responsive: Desktop (1200px+), Tablet (768-1199px), Mobile (bis 767px)
 
 ## Noch offen
-- [ ] Spendenseite finalisieren (PayPal-ID eintragen)
-- [ ] Impressum mit echtem Rechtstext füllen
-- [ ] Datenschutz mit echtem Rechtstext füllen
+- [ ] PayPal Business-ID eintragen (spenden.html)
 - [ ] Foto Dr. Charles Löhnitz
 - [ ] SPORT VERNETZT Seite (später)
-- [ ] Cookie-Banner (falls benötigt)
-- [ ] Responsive Feinschliff nach allen Änderungen
+- [ ] Responsive Feinschliff (Mobile/Tablet)
