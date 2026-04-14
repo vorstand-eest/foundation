@@ -785,12 +785,13 @@ h4 { font-size: 22px; }
     font-weight: 600;
     color: var(--color-white);
     margin-bottom: 20px;
+    line-height: 1.4;
 }
 
 .footer-links a {
     display: block;
     font-size: 14px;
-    padding: 4px 0;
+    line-height: 2.4;
     color: var(--color-footer-text);
     transition: color var(--transition);
 }
@@ -801,7 +802,8 @@ h4 { font-size: 22px; }
 
 .footer-contact p {
     font-size: 14px;
-    margin-bottom: 8px;
+    line-height: 2.4;
+    margin-bottom: 0;
 }
 
 .footer-contact a {
@@ -813,7 +815,7 @@ h4 { font-size: 22px; }
 }
 
 .footer-contact .btn {
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 .footer-bottom {
