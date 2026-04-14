@@ -1,5 +1,5 @@
 /* ============================================
-   E.E.S.T. Foundation — Main JavaScript
+   E.E.S.T. Foundation - Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
