@@ -979,6 +979,7 @@ h4 { font-size: 22px; }
 }
 
 .footer-bottom-row {
+    grid-template-columns: auto 1fr auto !important;
     align-items: start;
 }
 
